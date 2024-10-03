@@ -3,7 +3,8 @@
 import { Client } from "dwolla-v2";
 
 const getEnvironment = (): "production" | "sandbox" => {
-  const environment = process.env.DWOLLA_ENV as string;
+  const environment = "sandbox";
+  // const environment = process.env.DWOLLA_ENV as string;
 
   switch (environment) {
     case "sandbox":
@@ -17,10 +18,16 @@ const getEnvironment = (): "production" | "sandbox" => {
   }
 };
 
+// const dwollaClient = new Client({
+//   environment: getEnvironment(),
+//   key: process.env.DWOLLA_KEY as string,
+//   secret: process.env.DWOLLA_SECRET as string,
+// });
+
 const dwollaClient = new Client({
-  environment: getEnvironment(),
-  key: process.env.DWOLLA_KEY as string,
-  secret: process.env.DWOLLA_SECRET as string,
+  environment: "sandbox",
+  key: "uiqwcuvifvhfuvbquefv",
+  secret: "uiryf893yf849fn4u",
 });
 
 // Create a Dwolla Funding Source using a Plaid Processor Token
